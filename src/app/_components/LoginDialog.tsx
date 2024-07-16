@@ -30,9 +30,10 @@ function LoginDialog({sendEmail}:Props) {
     e.preventDefault();
     signIn("credentials", {
       email,
-      // username,
+      username:"",
       password,
-      // mobile:phoneNumber,
+      mobile:"",
+      school:"",
       callbackUrl: `${publicEnv.NEXT_PUBLIC_BASE_URL}/AboutMe`,
       // redirect:false,
     });
