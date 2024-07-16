@@ -11,8 +11,8 @@ import { MdLogin } from "react-icons/md";
 import { INDIGO } from "@/lib/constants";
 import ForgotEmailDialog from "./ForgotEmailDialog";
 import ForgotPasswordDialog from "./ForgotPasswordDialog";
-import { useToast } from '@/components/ui/use-toast';
-import { useRouter } from "next/navigation";
+// import { useToast } from '@/components/ui/use-toast';
+// import { useRouter } from "next/navigation";
 type Props={
   sendEmail:(to:string,title:string,emailContent:string)=>void,
 };
@@ -20,42 +20,42 @@ function LoginDialog({sendEmail}:Props) {
   const [open,setOpen]=useState(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const {toast}=useToast();
-  const router=useRouter();
+  // const {toast}=useToast();
+  // const router=useRouter();
   // const [username, setUsername] =useState<string>("");
   // const [phoneNumber,setPhoneNumber] =useState<string>("");
   // const username = "";
   // const phoneNumber = "";
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const result=await signIn("credentials", {
+    await signIn("credentials", {
       email,
       // username,
       password,
       // mobile:phoneNumber,
       callbackUrl: `${publicEnv.NEXT_PUBLIC_BASE_URL}/AboutMe`,
-      redirect:false,
+      // redirect:false,
     });
-    if((result)&&(result.error==="CredentialsSignin")){
-      toast({
-        variant: "destructive",
-        // title: " Fail to Upload",
-        description: "輸入的帳號不存在或有誤，請再次輸入",
-      });
-    }
-    else if(result&&result.error==="CallbackRouteError"){
-      toast({
-        variant: "destructive",
-        // title: " Fail to Upload",
-        description: "輸入的密碼不正確，請再次輸入",
-      });
-    }
-    else if (result && !result.error) {
+    // if((result)&&(result.error==="CredentialsSignin")){
+    //   toast({
+    //     variant: "destructive",
+    //     // title: " Fail to Upload",
+    //     description: "輸入的帳號不存在或有誤，請再次輸入",
+    //   });
+    // }
+    // else if(result&&result.error==="CallbackRouteError"){
+    //   toast({
+    //     variant: "destructive",
+    //     // title: " Fail to Upload",
+    //     description: "輸入的密碼不正確，請再次輸入",
+    //   });
+    // }
+    // else if (result && !result.error) {
       
-      router.push(result.url || `${publicEnv.NEXT_PUBLIC_BASE_URL}/AboutMe`);
-      router.refresh();
-      setOpen(false);
-    }
+    //   router.push(result.url || `${publicEnv.NEXT_PUBLIC_BASE_URL}/AboutMe`);
+    //   router.refresh();
+    //   setOpen(false);
+    // }
     // else{
     //   await signIn("credentials", {
     //     email,

@@ -61,13 +61,14 @@ export default CredentialsProvider({
     if(!existedUser){
       // return { message: "輸入的帳號不存在或有誤，請再次輸入" ,email:"", password:""};
       // throw new Error("輸入的帳號不存在或有誤，請再次輸入");
+      console.log("帳號不存在");
       return null;
     }
     const isValid = await bcrypt.compare(password, existedUser.hashedPassword);
     if (!isValid) {
-      throw new Error("輸入的密碼不正確，請再次輸入");
-      // console.log("輸入的密碼不正確，請再次輸入");
-      // return null;
+      // throw new Error("輸入的密碼不正確，請再次輸入");
+      console.log("輸入的密碼不正確，請再次輸入");
+      return null;
     }
     return {
       email: existedUser.email,
