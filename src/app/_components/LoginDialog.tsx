@@ -26,9 +26,9 @@ function LoginDialog({sendEmail}:Props) {
   // const [phoneNumber,setPhoneNumber] =useState<string>("");
   // const username = "";
   // const phoneNumber = "";
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await signIn("credentials", {
+    signIn("credentials", {
       email,
       // username,
       password,
