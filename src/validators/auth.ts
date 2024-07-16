@@ -5,4 +5,5 @@ export const authSchema = z.object({
   email: z.string().email(),
   password: z.string(),
   mobile:z.string().optional(),
+  school:z.string().optional(),
 });
