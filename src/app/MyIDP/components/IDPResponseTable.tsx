@@ -28,7 +28,7 @@ function IDPResponseTable({mode,simplifiedVersion,sectionRefs,data,response,upda
         <>
           {mode==="write" && sectionRefs && <div className="pt-4" 
             key={sectionIndex}
-            ref={(el) => (sectionRefs.current[sectionIndex] = el)}
+            ref={(el) => { sectionRefs.current[sectionIndex] = el; }}
           ></div>}
           {section.sectionData.length > 0 && 
             <table className="w-full">
