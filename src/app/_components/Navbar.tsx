@@ -10,7 +10,6 @@ import { getUserByEmail } from "./actions";
 import { sendMail } from "./mailService";
 async function Navbar() {
   const session = await auth();
-  alert(session);
   const notAuth = (!session || !session?.user?.email);
   let user=null;
   if(!notAuth) {
