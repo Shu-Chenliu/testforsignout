@@ -12,7 +12,7 @@ function SignOutPage() {
   const router = useRouter();
   useEffect(() => {
     if (session) {
-      console.log("Signing out...");
+      alert("Signing out...");
       signOut({ callbackUrl: publicEnv.NEXT_PUBLIC_BASE_URL });
     }
     router.push("/");
