@@ -1,25 +1,27 @@
-"use client";
-
 import { useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 function SignOutPage() {
   const { data: session } = useSession();
   const router = useRouter();
 
   useEffect(() => {
+    const handleSignOut = async () => {
+      try {
+        await signOut();
+        alert("Signed out successfully");
+      } catch (error) {
+        console.error("Error signing out:", error);
+      } finally {
+        router.push("/");
+      }
+    };
+
     if (session) {
-      signOut()
-        .then(() => {
-          alert("Signed out successfully");
-          router.push("/");
-        })
-        .catch((error) => {
-          alert("Error during sign out: " + error.message);
-        });
+      handleSignOut();
     } else {
-      alert("No session found, redirecting to home page");
+      alert("No session found, redirecting...");
       router.push("/");
     }
   }, [session, router]);
