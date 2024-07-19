@@ -51,7 +51,6 @@ export const {
           email: usersTable.email,
           mobile: usersTable.mobile,
           authority: usersTable.authority,
-          displayId: usersTable.displayId,
         })
         .from(usersTable)
         .where(eq(usersTable.email, email.toLowerCase()))
@@ -74,7 +73,6 @@ export const {
           provider: user.provider,
           mobile: user.mobile,
           authority:user.authority,
-          displayId: user.displayId,
           school: experience?experience.school:""
         },
       };
