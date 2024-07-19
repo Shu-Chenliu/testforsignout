@@ -9,21 +9,17 @@ function SignOutPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const handleSignOut = async () => {
-      try {
-        await signOut();
-        alert("Signed out successfully");
-      } catch (error) {
-        console.error("Error signing out:", error);
-      } finally {
-        router.push("/");
-      }
-    };
-
     if (session) {
-      handleSignOut();
+      signOut()
+        .then(() => {
+          alert("Signed out successfully");
+          router.push("/");
+        })
+        .catch((error) => {
+          alert("Error during sign out: " + error.message);
+        });
     } else {
-      alert("No session found, redirecting...");
+      alert("No session found, redirecting to home page");
       router.push("/");
     }
   }, [session, router]);
