@@ -115,4 +115,5 @@ export const {
   pages: {
     signIn: "/",
   },
+  debug:true,
 });
