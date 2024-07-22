@@ -1,33 +1,33 @@
 // "use client"
 import Image from "next/image";
-import useUsers from "@/app/hooks/useUsers";
-import bcrypt from "bcryptjs";
-import useExperience from "./hooks/useExperience";
+// import useUsers from "@/app/hooks/useUsers";
+// import bcrypt from "bcryptjs";
+// import useExperience from "./hooks/useExperience";
 import Bottombar from "./_components/Bottombar";
 
 export default function Home() {
   // const {postUser} = useUsers();
   // const {postExperience} = useExperience();
-  const experience1 = {
-    email: "one@gmail.com",
-    semester: "113-1",
-    school: "三民國小",
-    position: "校長",
-    subject: "",
-    role: "",
-    feature: ""
-  };
-  const experience2 = {
-    email: "two@gmail.com",
-    semester: "113-1",
-    school: "三民國小",
-    position: "老師",
-    subject: "",
-    role: "",
-    feature: ""
-  };
-  const addAdmin=async()=>{
-    const pswd=await bcrypt.hash("kist", 10);
+  // const experience1 = {
+  //   email: "one@gmail.com",
+  //   semester: "113-1",
+  //   school: "三民國小",
+  //   position: "校長",
+  //   subject: "",
+  //   role: "",
+  //   feature: ""
+  // };
+  // const experience2 = {
+  //   email: "two@gmail.com",
+  //   semester: "113-1",
+  //   school: "三民國小",
+  //   position: "老師",
+  //   subject: "",
+  //   role: "",
+  //   feature: ""
+  // };
+  // const addAdmin=async()=>{
+  //   const pswd=await bcrypt.hash("kist", 10);
     // try {
     //   await postUser({
     //     username:"誠致",
@@ -40,10 +40,10 @@ export default function Home() {
     // } catch (e) {
     //   alert("user already exist");
     // }
-  }
-  const addTeacher=async()=>{
-    const pswd1=await bcrypt.hash("0911111111", 10);
-    const pswd2=await bcrypt.hash("0922222222", 10);
+  // }
+  // const addTeacher=async()=>{
+  //   const pswd1=await bcrypt.hash("0911111111", 10);
+  //   const pswd2=await bcrypt.hash("0922222222", 10);
     // try {
     //   await postUser({
     //     username:"校一",
@@ -68,7 +68,7 @@ export default function Home() {
     //   console.log(e)
     //   alert("sth went wrong (user already exist)");
     // }
-  }
+  // }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
