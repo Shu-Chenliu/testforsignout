@@ -50,14 +50,14 @@ export default CredentialsProvider({
       .where(eq(usersTable.email, email.toLowerCase()))
       .limit(1)
       .execute();
-    console.log({
-      email: existedUser.email,
-      username: existedUser.username,
-      id: existedUser.id,
-      mobile: existedUser.mobile,
-      authority:existedUser.authority,
-      school: existedUser.school??""
-    })
+    // console.log({
+    //   email: existedUser.email,
+    //   username: existedUser.username,
+    //   id: existedUser.id,
+    //   mobile: existedUser.mobile,
+    //   authority:existedUser.authority,
+    //   school: existedUser.school??""
+    // })
     if(!existedUser){
       // return { message: "輸入的帳號不存在或有誤，請再次輸入" ,email:"", password:""};
       // throw new Error("輸入的帳號不存在或有誤，請再次輸入");

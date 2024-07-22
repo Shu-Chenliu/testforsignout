@@ -14,6 +14,7 @@ import ChangeMobileDialog from "./_components/ChangeMobileDialog";
 import ChangeAvatarDialog from "./_components/ChangeAvatarDialog";
 export default async function AboutMe(){
   const session = await auth();
+  console.log("aboutme",session);
   const email = session?.user?.email;
   if(!email){
     redirect(publicEnv.NEXT_PUBLIC_BASE_URL);

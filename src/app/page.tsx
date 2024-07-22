@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import Image from "next/image";
 import useUsers from "@/app/hooks/useUsers";
 import bcrypt from "bcryptjs";
@@ -6,8 +6,8 @@ import useExperience from "./hooks/useExperience";
 import Bottombar from "./_components/Bottombar";
 
 export default function Home() {
-  const {postUser} = useUsers();
-  const {postExperience} = useExperience();
+  // const {postUser} = useUsers();
+  // const {postExperience} = useExperience();
   const experience1 = {
     email: "one@gmail.com",
     semester: "113-1",
@@ -28,52 +28,52 @@ export default function Home() {
   };
   const addAdmin=async()=>{
     const pswd=await bcrypt.hash("kist", 10);
-    try {
-      await postUser({
-        username:"誠致",
-        email:"chengzhi@chengzhiedu.org",
-        phoneNumber:"",
-        hashedPassword:pswd,
-        // experience,
-        authority:"A",
-      });
-    } catch (e) {
-      alert("user already exist");
-    }
+    // try {
+    //   await postUser({
+    //     username:"誠致",
+    //     email:"chengzhi@chengzhiedu.org",
+    //     phoneNumber:"",
+    //     hashedPassword:pswd,
+    //     // experience,
+    //     authority:"A",
+    //   });
+    // } catch (e) {
+    //   alert("user already exist");
+    // }
   }
   const addTeacher=async()=>{
     const pswd1=await bcrypt.hash("0911111111", 10);
     const pswd2=await bcrypt.hash("0922222222", 10);
-    try {
-      await postUser({
-        username:"校一",
-        email:"one@gmail.com",
-        phoneNumber:"0911111111",
-        hashedPassword:pswd1,
-        // experience,
-        authority:"B",
-      });
-      await postUser({
-        username:"阿貳",
-        email:"two@gmail.com",
-        phoneNumber:"0922222222",
-        hashedPassword:pswd2,
-        // experience,
-        authority:"E",
-      });
-      await postExperience(experience1)
-      await postExperience(experience2)
-    }
-    catch (e){
-      console.log(e)
-      alert("sth went wrong (user already exist)");
-    }
+    // try {
+    //   await postUser({
+    //     username:"校一",
+    //     email:"one@gmail.com",
+    //     phoneNumber:"0911111111",
+    //     hashedPassword:pswd1,
+    //     // experience,
+    //     authority:"B",
+    //   });
+    //   await postUser({
+    //     username:"阿貳",
+    //     email:"two@gmail.com",
+    //     phoneNumber:"0922222222",
+    //     hashedPassword:pswd2,
+    //     // experience,
+    //     authority:"E",
+    //   });
+    //   await postExperience(experience1)
+    //   await postExperience(experience2)
+    // }
+    // catch (e){
+    //   console.log(e)
+    //   alert("sth went wrong (user already exist)");
+    // }
   }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <div className="cursor-pointer text-black left-0 top-0 flex w-full justify-center border-b border-gray-300  pb-6 pt-8 lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200  lg:p-4 " onClick={()=>{addAdmin()}}>add admin account: chengzhi@chengzhiedu.org [pwd: kist]</div>
-        <div className="cursor-pointer text-black left-0 top-0 flex w-full justify-center border-b border-gray-300  pb-6 pt-8 lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200  lg:p-4 " onClick={()=>{addTeacher()}}>add teacher account: one@gmail.com [pwd: 0911111111]</div>
+        {/* <div className="cursor-pointer text-black left-0 top-0 flex w-full justify-center border-b border-gray-300  pb-6 pt-8 lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200  lg:p-4 " onClick={()=>{addAdmin()}}>add admin account: chengzhi@chengzhiedu.org [pwd: kist]</div>
+        <div className="cursor-pointer text-black left-0 top-0 flex w-full justify-center border-b border-gray-300  pb-6 pt-8 lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200  lg:p-4 " onClick={()=>{addTeacher()}}>add teacher account: one@gmail.com [pwd: 0911111111]</div> */}
         {/* <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200  lg:p-4 dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>

@@ -11,6 +11,7 @@ import { sendMail } from "./mailService";
 async function Navbar() {
   const session = await auth();
   const notAuth = (!session || !session?.user?.email);
+  // console.log(session);
   let user=null;
   if(!notAuth) {
     const email=session.user?.email;

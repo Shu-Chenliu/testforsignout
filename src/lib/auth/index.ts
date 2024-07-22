@@ -63,7 +63,6 @@ export const {
         orderBy: [desc(experiencesTable.email)],
         limit: 1
       })
-
       return {
         ...session,
         user: {

@@ -21,6 +21,7 @@ export default function MyLectureHistory(){
   const { getSemesterIdpResponse, getIdpResponseByEmail } = useIdpResponse();
   const { postNewIdpVersion, getIdpVersions } = useIdpProblem();
   const { data: session } = useSession();
+  console.log(session);
   const authority = session?.user?.authority;
   const email = session?.user?.email;
 

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger,DialogHeader,DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 // import Resizer from "react-image-file-resizer";
@@ -74,9 +74,9 @@ function LoginDialog({sendEmail}:Props) {
         <button className="flex items-center gap-2 text-white rounded-sm hover:opacity-80 px-2 font-semibold"><MdLogin size={20} /><div>登入</div></button>
       </DialogTrigger>
       <DialogContent className="w-fit">
-        {/* <DialogHeader>
+        <DialogHeader>
           <DialogTitle className="text-center">登入</DialogTitle>
-        </DialogHeader> */}
+        </DialogHeader>
         <div className="pt-3">
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <AuthInput

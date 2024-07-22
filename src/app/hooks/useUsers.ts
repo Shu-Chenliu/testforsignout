@@ -26,8 +26,8 @@ export default function useUsers() {
       }
       return res.json(); // Parse JSON only if response is okay
     })
-    .then((data) => {
-      setData(data);
+    .then((d) => {
+      setData(d);
       setLoading(false);
       return data;
     })
